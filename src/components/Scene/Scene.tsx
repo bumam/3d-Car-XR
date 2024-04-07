@@ -1,11 +1,10 @@
 import { Html, Loader, MeshReflectorMaterial, PresentationControls, Stage } from '@react-three/drei';
 
-import { useCustomization } from '../contexts';
+import { useCustomization } from '../../contexts';
 
 import React, { Suspense, useMemo } from 'react';
-import { Car2 } from './Car2';
-import { Car1 } from './Car1';
-import { CarModelNamesEnum } from '../const';
+import { Car1, Car2 } from '../../components';
+import { CarModelNamesEnum } from '../../const';
 
 const Scene = () => {
   const { carModel } = useCustomization();

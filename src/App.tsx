@@ -1,11 +1,11 @@
 import { Canvas } from '@react-three/fiber';
 import './App.scss';
-import Scene from './components/Scene.js';
+import Scene from './components/Scene/Scene.js';
 
 import { Stats } from '@react-three/drei';
 import { CustomizationProvider } from './contexts';
-import Configurator from './components/Configurator/Configurator';
-import Details from './components/Details';
+import Details from './components/Details/Details';
+import { Configurator } from './components/Configurator/Configurator';
 
 function App() {
   return (

@@ -1,16 +1,16 @@
 import s from './ModelOptionsPanel.module.scss';
 import { FC } from 'react';
 import classNames from 'classnames';
-import { PanelSection } from '../PanelSection/PanelSection';
+import { PanelSection } from '../../components';
 
 import { IModelParams, useCustomization } from '../../contexts';
 import { CAR_MODEL_PARAMS } from '../../const';
 
-export interface ColorOptionsPanelProps {
+export interface ModelOptionsPanelProps {
   className?: string;
 }
 
-export const ModelOptionsPanel: FC<ColorOptionsPanelProps> = ({ className }) => {
+export const ModelOptionsPanel: FC<ModelOptionsPanelProps> = ({ className }) => {
   const { carModel, setCarModel } = useCustomization();
 
   return (

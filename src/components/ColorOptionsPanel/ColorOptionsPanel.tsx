@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FC } from 'react';
 import { IColorParams, useCustomization } from '../../contexts';
-import { PanelSection } from '../PanelSection/PanelSection';
+import { PanelSection } from '../../components';
 import s from './ColorOptions.module.scss';
 import { COLORS_PARAMS } from '../../const';
 

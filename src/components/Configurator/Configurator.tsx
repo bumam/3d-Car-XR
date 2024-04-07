@@ -1,8 +1,7 @@
-import { ColorOptionsPanel } from '../ColorOptionsPanel/ColorOptionsPanel';
 import s from './Configurator.module.scss';
-import { ModelOptionsPanel } from '../ModelOptionsPanel/ModelOptionsPanel';
+import { ColorOptionsPanel, ModelOptionsPanel } from '../../components';
 
-const Configurator = () => {
+export const Configurator = () => {
   return (
     <div className={s.Configurator}>
       <ModelOptionsPanel />
@@ -11,4 +10,3 @@ const Configurator = () => {
   );
 };
 
-export default Configurator;
