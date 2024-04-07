@@ -9,8 +9,9 @@ Title: Porsche Carrera GT 2003 Street
 
 import * as THREE from 'three';
 import React from 'react';
-import { useGLTF } from '@react-three/drei';
-import { GLTF } from 'three-stdlib';
+import {useGLTF} from '@react-three/drei';
+import {GLTF} from 'three-stdlib';
+import {useCustomization} from '../../contexts';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -46,10 +47,13 @@ type GLTFResult = GLTF & {
 
 export const Car1 = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF('./models/car1/car1.gltf') as GLTFResult;
+  const { carColor } = useCustomization();
+
+
   return (
     <group {...props} dispose={null}>
       <group position={[0, -0.01, 0]} rotation={[3.13, 0, Math.PI]}>
-        <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Paint} />
+        <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Paint} material-color={carColor.color} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_6.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_7.geometry} material={materials.Chrome} />

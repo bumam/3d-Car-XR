@@ -9,8 +9,9 @@ Title: AC - Mclaren P1
 
 import * as THREE from 'three';
 import React from 'react';
-import { useGLTF } from '@react-three/drei';
-import { GLTF } from 'three-stdlib';
+import {useGLTF} from '@react-three/drei';
+import {GLTF} from 'three-stdlib';
+import {useCustomization} from '../../contexts';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -251,6 +252,8 @@ type GLTFResult = GLTF & {
 
 export const Car2 = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF('./models/car2/car2.gltf') as GLTFResult;
+  const { carColor } = useCustomization();
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={2.75}>
@@ -273,6 +276,7 @@ export const Car2 = (props: JSX.IntrinsicElements['group']) => {
               <mesh geometry={nodes.g_Bumper_F_SUB1_Matte_Black_0.geometry} material={materials.Matte_Black} />
             </group>
           </group>
+
           <mesh
             geometry={nodes.Brake_Disk_RR_2_Brake_Disk_0.geometry}
             material={materials.Brake_Disk}
@@ -290,6 +294,7 @@ export const Car2 = (props: JSX.IntrinsicElements['group']) => {
             position={[-21.79, 20.86, -65.13]}
             rotation={[-Math.PI / 2, 0, Math.PI / 2]}
           />
+
           <group position={[34.81, 15.46, -65.08]}>
             <mesh geometry={nodes.Rim_LR1_SUB1_Details_0.geometry} material={materials.Details} />
             <mesh geometry={nodes.Rim_LR1_SUB0_Rim_0.geometry} material={materials.material} />
@@ -390,8 +395,16 @@ export const Car2 = (props: JSX.IntrinsicElements['group']) => {
             <mesh geometry={nodes.GEO_DOOR_RR_SUB3_Windows_0.geometry} material={materials.Windows} />
             <mesh geometry={nodes.GEO_DOOR_RR_SUB2_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
             <mesh geometry={nodes.GEO_DOOR_RR_SUB5_Carbon_Mult50_0.geometry} material={materials.Carbon_Mult50} />
-            <mesh geometry={nodes.GEO_DOOR_RR_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
-            <mesh geometry={nodes.GEO_DOOR_RR_SUB0_Carpaint_0.geometry} material={materials.Carpaint} />
+            <mesh
+              geometry={nodes.GEO_DOOR_RR_SUB1_Carpaint_Black_0.geometry}
+              material={materials.Carpaint_Black}
+              material-color={carColor.color}
+            />
+            <mesh
+              geometry={nodes.GEO_DOOR_RR_SUB0_Carpaint_0.geometry}
+              material={materials.Carpaint}
+              material-color={carColor.color}
+            />
           </group>
           <group position={[18.1, 49.45, 8.91]} rotation={[-0.38, -1.01, -0.68]}>
             <group position={[-15.03, -12.05, 30.66]} rotation={[0.57, -0.85, 0.15]}>
