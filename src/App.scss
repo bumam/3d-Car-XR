@@ -12,10 +12,8 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
     /* Non-prefixed version, currently
-                                     supported by Chrome, Edge, Opera and Firefox */
+                                       supported by Chrome, Edge, Opera and Firefox */
 }
-
-
 
 .item {
     transition: 0.4s opacity;
@@ -41,12 +39,6 @@
         cursor: pointer;
     }
 
-    &_colour_preview {
-        width: 32px;
-        height: 32px;
-        border-radius: 100%;
-        border: solid 3px #999999;
-    }
 
     &-active {
         .item_option {

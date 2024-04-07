@@ -13,7 +13,7 @@ import {useGLTF} from '@react-three/drei';
 import {GLTF} from 'three-stdlib';
 import {useCustomization} from '../../contexts';
 
-type GLTFResult = GLTF & {
+export type GLTFResult = GLTF & {
   nodes: {
     Object_4: THREE.Mesh;
     Object_5: THREE.Mesh;
@@ -34,6 +34,8 @@ type GLTFResult = GLTF & {
     Main_Paint: THREE.MeshStandardMaterial;
     Black: THREE.MeshStandardMaterial;
     Chrome: THREE.MeshStandardMaterial;
+    Matted: THREE.MeshStandardMaterial;
+    Metal: THREE.MeshStandardMaterial;
     Tail_Lights: THREE.MeshPhysicalMaterial;
     Glass: THREE.MeshPhysicalMaterial;
     Globes: THREE.MeshStandardMaterial;
@@ -45,15 +47,20 @@ type GLTFResult = GLTF & {
   };
 };
 
-export const Car1 = (props: JSX.IntrinsicElements['group']) => {
-  const { nodes, materials } = useGLTF('./models/car1/car1.gltf') as GLTFResult;
-  const { carColor } = useCustomization();
-
+export const Porsche = (props: JSX.IntrinsicElements['group']) => {
+  const { nodes, materials } = useGLTF('./models/Porsche/car1.gltf') as GLTFResult;
+  const { carColor, carTexture } = useCustomization();
 
   return (
     <group {...props} dispose={null}>
       <group position={[0, -0.01, 0]} rotation={[3.13, 0, Math.PI]}>
-        <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Paint} material-color={carColor.color} />
+        <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Paint}>
+          <meshStandardMaterial
+            color={carColor.color}
+            roughness={carTexture.roughness}
+            metalness={carTexture.metalness}
+          />
+        </mesh>
         <mesh geometry={nodes.Object_5.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_6.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_7.geometry} material={materials.Chrome} />
@@ -84,4 +91,4 @@ export const Car1 = (props: JSX.IntrinsicElements['group']) => {
   );
 };
 
-useGLTF.preload('./models/car1/car1.gltf');
+useGLTF.preload('./models/Porsche/car1.gltf');

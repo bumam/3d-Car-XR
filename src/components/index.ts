@@ -3,5 +3,6 @@ export * from './Details/Details';
 export * from './ModelOptionsPanel/ModelOptionsPanel';
 export * from './PanelSection/PanelSection';
 export * from './ColorOptionsPanel/ColorOptionsPanel';
-export * from './Cars/Car1';
-export * from './Cars/Car2';
+export * from './TextureOptionsPanel/TextureOptionsPanel';
+export * from './Cars/Porsche';
+export * from './Cars/McLaren';

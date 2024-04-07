@@ -3,7 +3,7 @@ import { Html, Loader, MeshReflectorMaterial, PresentationControls, Stage } from
 import { useCustomization } from '../../contexts';
 
 import React, { Suspense, useMemo } from 'react';
-import { Car1, Car2 } from '../../components';
+import { McLaren, Porsche } from '../../components';
 import { CarModelNamesEnum } from '../../const';
 
 const Scene = () => {
@@ -11,12 +11,12 @@ const Scene = () => {
 
   const currentCarModel = useMemo(() => {
     switch (carModel.model) {
-      case CarModelNamesEnum.CAR1:
-        return <Car1 />;
-      case CarModelNamesEnum.CAR2:
-        return <Car2 />;
+      case CarModelNamesEnum.PORSCHE:
+        return <Porsche />;
+      case CarModelNamesEnum.McLaren:
+        return <McLaren />;
       default:
-        return <Car1 />;
+        return <Porsche />;
     }
   }, [carModel]);
 

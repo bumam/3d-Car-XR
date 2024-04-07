@@ -18,21 +18,28 @@ export const ColorOptionsPanel: FC<ColorOptionsPanelProps> = ({ className }) => 
         {COLORS_PARAMS.map((item: IColorParams, index: number) => (
           <div
             key={index}
-            className={`item ${item.color === carColor.color ? 'item-active' : ''}`}
+            className={s.ColorOptionsPanel__item}
             onClick={() => {
-              console.log('setColor', item);
-
               setCarColor(item);
-              console.log('carColor', carColor);
             }}
           >
             <div
-              className="item_colour_preview"
+              className={classNames(
+                s.ColorOptionsPanel__colorPreview,
+                item.color === carColor.color && s.ColorOptionsPanel__activeBorder,
+              )}
               style={{
                 backgroundColor: item.color,
               }}
             />
-            <div className="item_option">{item.colorName}</div>
+            <div
+              className={classNames(
+                s.ColorOptionsPanel__option,
+                item.color === carColor.color && s.ColorOptionsPanel__activeOption,
+              )}
+            >
+              {item.colorName}
+            </div>
           </div>
         ))}
       </PanelSection>

@@ -1,4 +1,4 @@
-import { IColorParams, IModelParams } from '../contexts';
+import { IColorParams, IModelParams, ITextureParams } from '../contexts';
 
 export enum ColorNamesEnum {
   RED = 'red',
@@ -7,12 +7,35 @@ export enum ColorNamesEnum {
   BLACK = 'black',
 }
 
-export enum TextureNamesEnum {}
+export enum TextureNamesEnum {
+  METAL = 'Metal',
+  MATTED = 'Matted',
+  CHROME = 'Chrome',
+}
 
 export enum CarModelNamesEnum {
-  CAR1 = 'car1',
-  CAR2 = 'car2',
+  PORSCHE = 'porsche',
+  McLaren = 'McLaren',
 }
+
+export const TEXTURE_PARAMS: ITextureParams[] = [
+  {
+    name: TextureNamesEnum.MATTED,
+    roughness: 0.6,
+    metalness: 0,
+  },
+
+  {
+    name: TextureNamesEnum.METAL,
+    roughness: 0.3,
+    metalness: 0.8,
+  },
+  {
+    name: TextureNamesEnum.CHROME,
+    roughness: 0,
+    metalness: 0.3,
+  },
+];
 
 export const COLORS_PARAMS: IColorParams[] = [
   {
@@ -35,10 +58,10 @@ export const COLORS_PARAMS: IColorParams[] = [
 export const CAR_MODEL_PARAMS: IModelParams[] = [
   {
     name: 'Porsche',
-    model: CarModelNamesEnum.CAR1,
+    model: CarModelNamesEnum.PORSCHE,
   },
   {
     name: 'McLaren',
-    model: CarModelNamesEnum.CAR2,
+    model: CarModelNamesEnum.McLaren,
   },
 ];
