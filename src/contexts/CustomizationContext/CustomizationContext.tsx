@@ -1,6 +1,7 @@
 import { createContext } from 'react';
-import { TextureNamesEnum } from './const';
+
 import { IColorParams, IModelParams } from './interface';
+import { TextureNamesEnum } from '../../const';
 
 export interface CustomizationContextProps {
   carModel?: IModelParams;

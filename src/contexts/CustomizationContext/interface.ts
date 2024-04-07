@@ -1,4 +1,4 @@
-import { CarModelNamesEnum, ColorNamesEnum } from './const';
+import { CarModelNamesEnum, ColorNamesEnum } from '../../const';
 
 export interface IColorParams {
   color: string;

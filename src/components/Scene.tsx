@@ -1,16 +1,16 @@
 import { Html, Loader, MeshReflectorMaterial, PresentationControls, Stage } from '@react-three/drei';
 
 import { useCustomization } from '../contexts';
-import { CarModelNamesEnum } from '../contexts/CustomizationContext/const';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useMemo } from 'react';
 import { Car2 } from './Car2';
 import { Car1 } from './Car1';
+import { CarModelNamesEnum } from '../const';
 
 const Scene = () => {
   const { carModel } = useCustomization();
 
-  const currentCarModel = () => {
+  const currentCarModel = useMemo(() => {
     switch (carModel.model) {
       case CarModelNamesEnum.CAR1:
         return <Car1 />;
@@ -19,7 +19,7 @@ const Scene = () => {
       default:
         return <Car1 />;
     }
-  };
+  }, [carModel]);
 
   return (
     /* `PresentationControls` is a component from the `@react-three/drei` library that provides
@@ -34,10 +34,6 @@ const Scene = () => {
       }
     >
       <PresentationControls speed={1.5} global zoom={0.7} polar={[-0.1, Math.PI / 4]}>
-        {/* This code block is rendering a 3D scene using the `@react-three/drei` library. The `Stage`
-      component sets up the environment for the scene, with the `environment` prop specifying the
-      type of environment (in this case, a city), `intensity` prop setting the intensity of the
-      lighting, and `contactShadow` prop disabling contact shadows. */}
         <Suspense
           fallback={
             <Html>
@@ -46,15 +42,7 @@ const Scene = () => {
           }
         >
           <Stage environment={'city'} intensity={0.6} shadows={false}>
-            {/* <mesh>
-            <boxGeometry/>
-            <meshNormalMaterial/>
-        </mesh> */}
-            {/*<>*/}
-            {/*  <Car2 />*/}
-            {/*</>*/}
-
-            {currentCarModel()}
+            {currentCarModel}
           </Stage>
         </Suspense>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>

@@ -4,7 +4,7 @@ import Scene from './components/Scene.js';
 
 import { Stats } from '@react-three/drei';
 import { CustomizationProvider } from './contexts';
-import Configurator from './components/Configurator';
+import Configurator from './components/Configurator/Configurator';
 import Details from './components/Details';
 
 function App() {

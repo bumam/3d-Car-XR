@@ -1,8 +1,9 @@
 import React, { FC, PropsWithChildren, useMemo, useState } from 'react';
 
 import { CustomizationContext, CustomizationContextProps } from './CustomizationContext';
-import { CAR_MODEL_PARAMS, COLORS_PARAMS } from './const';
+
 import { IColorParams, IModelParams } from './interface';
+import { CAR_MODEL_PARAMS, COLORS_PARAMS } from '../../const';
 
 export const CustomizationProvider: FC<PropsWithChildren<CustomizationContextProps>> = ({ children }) => {
   const [carModel, setCarModel] = useState<IModelParams>(CAR_MODEL_PARAMS[0]);
@@ -21,7 +22,7 @@ export const CustomizationProvider: FC<PropsWithChildren<CustomizationContextPro
       carTexture,
       setCarTexture,
     }),
-    [],
+    [carModel, accessory, carColor, carTexture],
   );
 
   return <CustomizationContext.Provider value={defaultProps}>{children}</CustomizationContext.Provider>;

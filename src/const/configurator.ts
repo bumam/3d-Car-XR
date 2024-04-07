@@ -1,13 +1,10 @@
-import { IColorParams, IModelParams } from './interface';
+import { IColorParams, IModelParams } from '../contexts';
 
 export enum ColorNamesEnum {
   RED = 'red',
-  GREEN = 'green',
   BLUE = 'blue',
-  WHITE = 'white',
   YELLOW = 'yellow',
   BLACK = 'black',
-  GRAY = 'gray',
 }
 
 export enum TextureNamesEnum {}
@@ -23,10 +20,6 @@ export const COLORS_PARAMS: IColorParams[] = [
     colorName: ColorNamesEnum.RED,
   },
   {
-    color: '#1a5e1a',
-    colorName: ColorNamesEnum.GREEN,
-  },
-  {
     color: '#0000FF',
     colorName: ColorNamesEnum.BLUE,
   },
@@ -35,16 +28,8 @@ export const COLORS_PARAMS: IColorParams[] = [
     colorName: ColorNamesEnum.YELLOW,
   },
   {
-    color: '#59555b',
-    colorName: ColorNamesEnum.GRAY,
-  },
-  {
     color: '#222222',
     colorName: ColorNamesEnum.BLACK,
-  },
-  {
-    color: '#ececec',
-    colorName: ColorNamesEnum.WHITE,
   },
 ];
 export const CAR_MODEL_PARAMS: IModelParams[] = [
