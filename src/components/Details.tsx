@@ -1,8 +1,5 @@
-import { useCustomization } from '../contexts/Customization';
-
 const Details = () => {
-  const { carDetails, setCarDetails } = useCustomization();
-
+  const carDetails = false;
   if (!carDetails) {
     return <div className="noDetails"></div>;
   }

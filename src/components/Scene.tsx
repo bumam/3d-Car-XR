@@ -1,23 +1,26 @@
 import { Html, Loader, MeshReflectorMaterial, PresentationControls, Stage } from '@react-three/drei';
 
-// import { useLoader } from '@react-three/fiber'
-import Car1 from './Car1';
-import Car2 from './Car2';
-import { useCustomization } from '../contexts/Customization';
+import { useCustomization } from '../contexts';
+import { CarModelNamesEnum } from '../contexts/CustomizationContext/const';
+
 import React, { Suspense } from 'react';
-
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-
-function CarSelect({ carState }) {
-  if (carState === 'car1') {
-    return <Car1 />;
-  }
-  return <Car2 />;
-}
+import { Car2 } from './Car2';
+import { Car1 } from './Car1';
 
 const Scene = () => {
-  // const gltf = useLoader(GLTFLoader, './models/loader.gltf');
-  const { car, setCar } = useCustomization();
+  const { carModel } = useCustomization();
+
+  const currentCarModel = () => {
+    switch (carModel.model) {
+      case CarModelNamesEnum.CAR1:
+        return <Car1 />;
+      case CarModelNamesEnum.CAR2:
+        return <Car2 />;
+      default:
+        return <Car1 />;
+    }
+  };
+
   return (
     /* `PresentationControls` is a component from the `@react-three/drei` library that provides
             camera controls for a 3D scene. The `speed` prop sets the speed of camera movement, `global`
@@ -42,13 +45,16 @@ const Scene = () => {
             </Html>
           }
         >
-          <Stage environment={'city'} intensity={0.6} contactShadow={false}>
+          <Stage environment={'city'} intensity={0.6} shadows={false}>
             {/* <mesh>
             <boxGeometry/>
             <meshNormalMaterial/>
         </mesh> */}
+            {/*<>*/}
+            {/*  <Car2 />*/}
+            {/*</>*/}
 
-            <CarSelect carState={car} />
+            {currentCarModel()}
           </Stage>
         </Suspense>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>
@@ -57,6 +63,7 @@ const Scene = () => {
         creates a reflective surface on a mesh. The props passed to it are used to customize the
     appearance and behavior of the reflective surface. */}
           <MeshReflectorMaterial
+            mirror={1}
             blur={[300, 100]}
             resolution={2048}
             mixBlur={1}
