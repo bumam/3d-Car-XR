@@ -5,6 +5,7 @@ import { useCustomization } from '../../contexts';
 import React, { Suspense } from 'react';
 import { McLaren, Porsche } from '../../components';
 import { CarModelNamesEnum } from '../../const';
+import { Ferrari } from '../Cars/Ferrari';
 
 const Scene = () => {
   const { carModel } = useCustomization();
@@ -32,6 +33,7 @@ const Scene = () => {
           <Stage environment={'city'} intensity={0.6} shadows={false}>
             {carModel.model === CarModelNamesEnum.McLaren && <McLaren />}
             {carModel.model === CarModelNamesEnum.PORSCHE && <Porsche />}
+            {carModel.model === CarModelNamesEnum.Ferrari && <Ferrari />}
           </Stage>
         </Suspense>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>

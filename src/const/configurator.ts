@@ -16,6 +16,7 @@ export enum TextureNamesEnum {
 export enum CarModelNamesEnum {
   PORSCHE = 'porsche',
   McLaren = 'McLaren',
+  Ferrari = 'Ferrari',
 }
 
 export const TEXTURE_PARAMS: ITextureParams[] = [
@@ -63,5 +64,9 @@ export const CAR_MODEL_PARAMS: IModelParams[] = [
   {
     name: 'McLaren',
     model: CarModelNamesEnum.McLaren,
+  },
+  {
+    name: 'Ferrari',
+    model: CarModelNamesEnum.Ferrari,
   },
 ];
