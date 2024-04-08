@@ -325,72 +325,72 @@ export const McLaren = (props: JSX.IntrinsicElements['group']) => {
             <mesh geometry={nodes.Tyre_LF_2_Tyre_0.geometry} material={materials.Tyre} />
           </group>
           <group position={[-18.1, 49.45, 8.91]} rotation={[-3.06, -1.13, 2.87]}>
-            <group position={[-15.04, -4.19, -32.67]} rotation={[-0.67, 0.78, 0.4]}>
-              <group position={[40.89, -4.64, -0.14]} rotation={[-0.59, 0.86, -2.81]}>
-                <mesh
-                  geometry={nodes.polymsh_detached93_2_INT_Decals_REF_spec_0.geometry}
-                  material={materials.INT_Decals_REF_spec}
-                  position={[36.3, 55.76, 3.48]}
-                  rotation={[0.84, -0.12, -3.01]}
-                />
-              </group>
-              <group position={[34.68, -10.11, -9.26]} rotation={[-2.82, 0.37, 0.97]}>
-                <mesh
-                  geometry={nodes.Cylinder7_SUB0_INT_Decals_REF_GLOSS_0.geometry}
-                  material={materials.INT_Decals_REF_GLOSS}
-                />
-                <mesh
-                  geometry={nodes.Cylinder7_SUB1_INT_Decals_REF_spec_0.geometry}
-                  material={materials.INT_Decals_REF_spec}
-                />
-              </group>
-              <mesh
-                geometry={nodes.polymsh6_2_INT_Decals_REF_GLOSS_0.geometry}
-                material={materials.INT_Decals_REF_GLOSS}
-                position={[35.2, -7.12, -2.33]}
-                rotation={[-3.09, 1.12, 1.77]}
-              />
-              <group position={[2.58, 9.63, 52.47]} rotation={[-2.21, 1.07, 0.78]}>
-                <group position={[67.54, 43.78, -10.49]} rotation={[0.82, 0, 1.57]}>
-                  <mesh
-                    geometry={nodes.polymsh_extracted_SUB0_Windows_alpha_0.geometry}
-                    material={materials.Windows_alpha}
-                  />
-                  <mesh geometry={nodes.polymsh_extracted_SUB1_Windows_0.geometry} material={materials.Windows} />
-                </group>
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB5_INT_Decals_REF_spec_0.geometry}
-                  material={materials.INT_Decals_REF_spec}
-                />
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB8_INT_Decals_FLAT_0.geometry}
-                  material={materials.INT_Decals_FLAT}
-                />
-                <mesh geometry={nodes.GEO_DOOR_L_SUB3_INT_Velvet_0.geometry} material={materials.INT_Velvet} />
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB4_INT_PLASTIC_Speakers_0.geometry}
-                  material={materials.INT_PLASTIC_Speakers}
-                />
-                <mesh geometry={nodes.GEO_DOOR_L_SUB0_INT_carbon_0.geometry} material={materials.INT_carbon} />
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB7_INT_METAL_Aluminium_0.geometry}
-                  material={materials.INT_METAL_Aluminium}
-                />
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB2_INT_PLASTIC_Black_0.geometry}
-                  material={materials.INT_PLASTIC_Black}
-                />
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB6_INT_PLASTIC_Rubber_0.geometry}
-                  material={materials.INT_PLASTIC_Rubber}
-                />
-                <mesh geometry={nodes.GEO_DOOR_L_SUB1_Matte_Black_0.geometry} material={materials.Matte_Black} />
-                <mesh
-                  geometry={nodes.GEO_DOOR_L_SUB9_INT_Decals_REF_AT_GLOSS_0.geometry}
-                  material={materials.INT_Decals_REF_AT_GLOSS}
-                />
-              </group>
-            </group>
+            {/*<group position={[-15.04, -4.19, -32.67]} rotation={[-0.67, 0.78, 0.4]}>*/}
+            {/*  <group position={[40.89, -4.64, -0.14]} rotation={[-0.59, 0.86, -2.81]}>*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.polymsh_detached93_2_INT_Decals_REF_spec_0.geometry}*/}
+            {/*      material={materials.INT_Decals_REF_spec}*/}
+            {/*      position={[36.3, 55.76, 3.48]}*/}
+            {/*      rotation={[0.84, -0.12, -3.01]}*/}
+            {/*    />*/}
+            {/*  </group>*/}
+            {/*  <group position={[34.68, -10.11, -9.26]} rotation={[-2.82, 0.37, 0.97]}>*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.Cylinder7_SUB0_INT_Decals_REF_GLOSS_0.geometry}*/}
+            {/*      material={materials.INT_Decals_REF_GLOSS}*/}
+            {/*    />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.Cylinder7_SUB1_INT_Decals_REF_spec_0.geometry}*/}
+            {/*      material={materials.INT_Decals_REF_spec}*/}
+            {/*    />*/}
+            {/*  </group>*/}
+            {/*  <mesh*/}
+            {/*    geometry={nodes.polymsh6_2_INT_Decals_REF_GLOSS_0.geometry}*/}
+            {/*    material={materials.INT_Decals_REF_GLOSS}*/}
+            {/*    position={[35.2, -7.12, -2.33]}*/}
+            {/*    rotation={[-3.09, 1.12, 1.77]}*/}
+            {/*  />*/}
+            {/*  <group position={[2.58, 9.63, 52.47]} rotation={[-2.21, 1.07, 0.78]}>*/}
+            {/*    <group position={[67.54, 43.78, -10.49]} rotation={[0.82, 0, 1.57]}>*/}
+            {/*      <mesh*/}
+            {/*        geometry={nodes.polymsh_extracted_SUB0_Windows_alpha_0.geometry}*/}
+            {/*        material={materials.Windows_alpha}*/}
+            {/*      />*/}
+            {/*      <mesh geometry={nodes.polymsh_extracted_SUB1_Windows_0.geometry} material={materials.Windows} />*/}
+            {/*    </group>*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB5_INT_Decals_REF_spec_0.geometry}*/}
+            {/*      material={materials.INT_Decals_REF_spec}*/}
+            {/*    />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB8_INT_Decals_FLAT_0.geometry}*/}
+            {/*      material={materials.INT_Decals_FLAT}*/}
+            {/*    />*/}
+            {/*    <mesh geometry={nodes.GEO_DOOR_L_SUB3_INT_Velvet_0.geometry} material={materials.INT_Velvet} />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB4_INT_PLASTIC_Speakers_0.geometry}*/}
+            {/*      material={materials.INT_PLASTIC_Speakers}*/}
+            {/*    />*/}
+            {/*    <mesh geometry={nodes.GEO_DOOR_L_SUB0_INT_carbon_0.geometry} material={materials.INT_carbon} />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB7_INT_METAL_Aluminium_0.geometry}*/}
+            {/*      material={materials.INT_METAL_Aluminium}*/}
+            {/*    />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB2_INT_PLASTIC_Black_0.geometry}*/}
+            {/*      material={materials.INT_PLASTIC_Black}*/}
+            {/*    />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB6_INT_PLASTIC_Rubber_0.geometry}*/}
+            {/*      material={materials.INT_PLASTIC_Rubber}*/}
+            {/*    />*/}
+            {/*    <mesh geometry={nodes.GEO_DOOR_L_SUB1_Matte_Black_0.geometry} material={materials.Matte_Black} />*/}
+            {/*    <mesh*/}
+            {/*      geometry={nodes.GEO_DOOR_L_SUB9_INT_Decals_REF_AT_GLOSS_0.geometry}*/}
+            {/*      material={materials.INT_Decals_REF_AT_GLOSS}*/}
+            {/*    />*/}
+            {/*  </group>*/}
+            {/*</group>*/}
             <mesh geometry={nodes.GEO_DOOR_RR_SUB4_Mirror_0.geometry} material={materials.Mirror} />
             <mesh geometry={nodes.GEO_DOOR_RR_SUB3_Windows_0.geometry} material={materials.Windows} />
             <mesh geometry={nodes.GEO_DOOR_RR_SUB2_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
@@ -475,8 +475,20 @@ export const McLaren = (props: JSX.IntrinsicElements['group']) => {
             <mesh geometry={nodes.polymsh5_SUB4_Windows_0.geometry} material={materials.Windows} />
             <mesh geometry={nodes.polymsh5_SUB5_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
             <mesh geometry={nodes.polymsh5_SUB3_Carbon_Mult50_0.geometry} material={materials.Carbon_Mult50} />
-            <mesh geometry={nodes.polymsh5_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
-            <mesh geometry={nodes.polymsh5_SUB0_Carpaint_0.geometry} material={materials.Carpaint} />
+            <mesh geometry={nodes.polymsh5_SUB1_Carpaint_Black_0.geometry}>
+              <meshStandardMaterial
+                color={carColor.color}
+                roughness={carTexture.roughness}
+                metalness={carTexture.metalness}
+              />
+            </mesh>
+            <mesh geometry={nodes.polymsh5_SUB0_Carpaint_0.geometry}>
+              <meshStandardMaterial
+                color={carColor.color}
+                roughness={carTexture.roughness}
+                metalness={carTexture.metalness}
+              />
+            </mesh>
           </group>
           <group position={[-34.81, 15.46, -65.08]}>
             <group position={[1.82, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
@@ -515,7 +527,13 @@ export const McLaren = (props: JSX.IntrinsicElements['group']) => {
                 <group rotation={[0, 0, 0.9]}>
                   <mesh geometry={nodes.g_Wing_SUB1_Chrome_0.geometry} material={materials.Chrome} />
                   <mesh geometry={nodes.g_Wing_SUB3_Details_0.geometry} material={materials.Details} />
-                  <mesh geometry={nodes.g_Wing_SUB2_Carpaint_0.geometry} material={materials.Carpaint} />
+                  <mesh geometry={nodes.g_Wing_SUB2_Carpaint_0.geometry}>
+                    <meshStandardMaterial
+                      color={carColor.color}
+                      roughness={carTexture.roughness}
+                      metalness={carTexture.metalness}
+                    />
+                  </mesh>
                   <mesh geometry={nodes.g_Wing_SUB0_Matte_Black_0.geometry} material={materials.Matte_Black} />
                 </group>
               </group>
@@ -602,7 +620,14 @@ export const McLaren = (props: JSX.IntrinsicElements['group']) => {
             <mesh geometry={nodes.g_Body_SUB4_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
             <mesh geometry={nodes.g_Body_SUB5_Carbon_Mult50_0.geometry} material={materials.Carbon_Mult50} />
             <mesh geometry={nodes.g_Body_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
-            <mesh geometry={nodes.g_Body_SUB2_Carpaint_0.geometry} material={materials.Carpaint} />
+            <mesh geometry={nodes.g_Body_SUB2_Carpaint_0.geometry} material={materials.Matte_Black} />
+            <mesh geometry={nodes.g_Body_SUB2_Carpaint_0.geometry}>
+              <meshStandardMaterial
+                color={carColor.color}
+                roughness={carTexture.roughness}
+                metalness={carTexture.metalness}
+              />
+            </mesh>
             <mesh geometry={nodes.g_Body_SUB11_Matte_Black_0.geometry} material={materials.Matte_Black} />
             <mesh geometry={nodes.g_Body_SUB9_Grid2_0.geometry} material={materials.Grid2} />
             <mesh geometry={nodes.g_Body_SUB8_Grid1_Mult70_0.geometry} material={materials.Grid1_Mult70} />
@@ -610,7 +635,13 @@ export const McLaren = (props: JSX.IntrinsicElements['group']) => {
           <group position={[0, 33.86, 46.54]}>
             <group position={[0, -8.01, 26.45]} rotation={[0, Math.PI / 2, 0]}>
               <mesh geometry={nodes.GEO_HOOD_SUB2_Details_0.geometry} material={materials.Details} />
-              <mesh geometry={nodes.GEO_HOOD_SUB0_Carpaint_0.geometry} material={materials.Carpaint} />
+              <mesh geometry={nodes.GEO_HOOD_SUB0_Carpaint_0.geometry}>
+                <meshStandardMaterial
+                  color={carColor.color}
+                  roughness={carTexture.roughness}
+                  metalness={carTexture.metalness}
+                />
+              </mesh>
               <mesh geometry={nodes.GEO_HOOD_SUB1_Matte_Black_0.geometry} material={materials.Matte_Black} />
             </group>
           </group>
@@ -767,7 +798,13 @@ export const McLaren = (props: JSX.IntrinsicElements['group']) => {
           <mesh geometry={nodes.LED_OIL_1_2_INT_DISPLAY_0.geometry} material={materials.INT_DISPLAY} />
           <mesh geometry={nodes.LED_OIL_2_2_INT_DISPLAY_0.geometry} material={materials.INT_DISPLAY} />
           <mesh geometry={nodes.LED_OIL_3_2_INT_DISPLAY_0.geometry} material={materials.INT_DISPLAY} />
-          <mesh geometry={nodes.GEO_frontFender_2_Carpaint_0.geometry} material={materials.Carpaint} />
+          <mesh geometry={nodes.GEO_frontFender_2_Carpaint_0.geometry}>
+            <meshStandardMaterial
+              color={carColor.color}
+              roughness={carTexture.roughness}
+              metalness={carTexture.metalness}
+            />
+          </mesh>
           <mesh geometry={nodes.polymsh_detached73_SUB0_Windows_0.geometry} material={materials.Windows} />
           <mesh geometry={nodes.polymsh_detached73_SUB1_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
         </group>

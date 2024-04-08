@@ -2,23 +2,12 @@ import { Html, Loader, MeshReflectorMaterial, PresentationControls, Stage } from
 
 import { useCustomization } from '../../contexts';
 
-import React, { Suspense, useMemo } from 'react';
+import React, { Suspense } from 'react';
 import { McLaren, Porsche } from '../../components';
 import { CarModelNamesEnum } from '../../const';
 
 const Scene = () => {
   const { carModel } = useCustomization();
-
-  const currentCarModel = useMemo(() => {
-    switch (carModel.model) {
-      case CarModelNamesEnum.PORSCHE:
-        return <Porsche />;
-      case CarModelNamesEnum.McLaren:
-        return <McLaren />;
-      default:
-        return <Porsche />;
-    }
-  }, [carModel]);
 
   return (
     /* `PresentationControls` is a component from the `@react-three/drei` library that provides
@@ -41,7 +30,8 @@ const Scene = () => {
           }
         >
           <Stage environment={'city'} intensity={0.6} shadows={false}>
-            {currentCarModel}
+            {carModel.model === CarModelNamesEnum.McLaren && <McLaren />}
+            {carModel.model === CarModelNamesEnum.PORSCHE && <Porsche />}
           </Stage>
         </Suspense>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>
