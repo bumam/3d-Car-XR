@@ -10,6 +10,7 @@ export const CustomizationProvider: FC<PropsWithChildren<CustomizationContextPro
   const [accessory, setAccessory] = useState(0);
   const [carColor, setCarColor] = useState<IColorParams>(COLORS_PARAMS[0]);
   const [carTexture, setCarTexture] = useState(TEXTURE_PARAMS[0]);
+  const [isWheelsRotation, setIsWheelsRotation] = useState(false);
 
   const defaultProps = useMemo(
     () => ({
@@ -21,8 +22,10 @@ export const CustomizationProvider: FC<PropsWithChildren<CustomizationContextPro
       setCarColor,
       carTexture,
       setCarTexture,
+      isWheelsRotation,
+      setIsWheelsRotation,
     }),
-    [carModel, accessory, carColor, carTexture],
+    [carModel, accessory, carColor, carTexture, isWheelsRotation],
   );
 
   return <CustomizationContext.Provider value={defaultProps}>{children}</CustomizationContext.Provider>;

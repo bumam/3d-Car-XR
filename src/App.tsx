@@ -5,7 +5,8 @@ import Scene from './components/Scene/Scene.js';
 import { Stats } from '@react-three/drei';
 import { CustomizationProvider } from './contexts';
 import Details from './components/Details/Details';
-import { Configurator } from './components/Configurator/Configurator';
+import { Configurator } from './components';
+import '@shoelace-style/shoelace/dist/themes/light.css';
 
 function App() {
   return (

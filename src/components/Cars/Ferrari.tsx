@@ -4,10 +4,12 @@ Command: npx gltfjsx@6.1.11 public/models/Ferrari/car_for_games_unity.gltf -t
 */
 
 import * as THREE from 'three';
-import React from 'react';
+import React, {useRef} from 'react';
 import {useGLTF} from '@react-three/drei';
 import {GLTF} from 'three-stdlib';
 import {useCustomization} from '../../contexts';
+import {useFrame} from '@react-three/fiber';
+import {WHEELS_ROTATION_SPEED} from '../../const';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -76,30 +78,51 @@ type GLTFResult = GLTF & {
 
 export function Ferrari(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('./models/Ferrari/car_for_games_unity.gltf') as GLTFResult;
-  const { carColor, carTexture } = useCustomization();
+  const { carColor, carTexture, isWheelsRotation } = useCustomization();
+  const wheelRef1 = useRef<any>(null);
+  const wheelRef2 = useRef<any>(null);
+  const wheelRef3 = useRef<any>(null);
+  const wheelRef4 = useRef<any>(null);
+
+  useFrame(() => {
+    if (isWheelsRotation) {
+      if (wheelRef1) {
+        wheelRef1.current.rotation.x += WHEELS_ROTATION_SPEED;
+      }
+      if (wheelRef2) {
+        wheelRef2.current.rotation.x += WHEELS_ROTATION_SPEED;
+      }
+      if (wheelRef3) {
+        wheelRef3.current.rotation.x += WHEELS_ROTATION_SPEED;
+      }
+      if (wheelRef4) {
+        wheelRef4.current.rotation.x += WHEELS_ROTATION_SPEED;
+      }
+    }
+  });
 
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_26.geometry} material={materials.MainAlbedo} />
-      <group position={[-0.62, 0.32, -1.25]}>
+      <group ref={wheelRef1} position={[-0.62, 0.32, -1.25]}>
         <mesh geometry={nodes.Object_29.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_30.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_31.geometry} material={materials.Tire01Albedo} />
         <mesh geometry={nodes.Object_32.geometry} material={materials.Wheel} />
       </group>
-      <group position={[0.62, 0.32, -1.25]}>
+      <group ref={wheelRef2} position={[0.62, 0.32, -1.25]}>
         <mesh geometry={nodes.Object_35.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_36.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_37.geometry} material={materials.Tire01Albedo} />
         <mesh geometry={nodes.Object_38.geometry} material={materials.Wheel} />
       </group>
-      <group position={[-0.62, 0.32, 1.27]}>
+      <group ref={wheelRef3} position={[-0.62, 0.32, 1.27]}>
         <mesh geometry={nodes.Object_41.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_42.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_43.geometry} material={materials.Tire01Albedo} />
         <mesh geometry={nodes.Object_44.geometry} material={materials.Wheel} />
       </group>
-      <group position={[0.62, 0.32, 1.27]}>
+      <group ref={wheelRef4} position={[0.62, 0.32, 1.27]}>
         <mesh geometry={nodes.Object_47.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_48.geometry} material={materials.MainAlbedo} />
         <mesh geometry={nodes.Object_49.geometry} material={materials.Tire01Albedo} />
@@ -148,4 +171,4 @@ export function Ferrari(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('/car_for_games_unity.gltf');
+useGLTF.preload('.models/Ferrari/car_for_games_unity.gltf');

@@ -11,6 +11,8 @@ export interface CustomizationContextProps {
   setCarTexture?: (textureParams: ITextureParams) => void;
   accessory?: any;
   setAccessory?: (value: any) => void;
+  isWheelsRotation?: boolean;
+  setIsWheelsRotation?: (value: boolean) => void;
 }
 
 export const CustomizationContext = createContext<CustomizationContextProps>({});

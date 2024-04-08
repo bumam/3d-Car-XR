@@ -1,0 +1,28 @@
+.TextureOptionsPanel {
+  &__item {
+    transition: 0.4s opacity;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+  &__texturePreview {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: solid 3px #999999;
+  }
+
+  &__activeBorder {
+    border: solid 3px white;
+  }
+
+  &__activeOption {
+    color: white;
+  }
+}

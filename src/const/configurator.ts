@@ -70,3 +70,5 @@ export const CAR_MODEL_PARAMS: IModelParams[] = [
     model: CarModelNamesEnum.Ferrari,
   },
 ];
+
+export const WHEELS_ROTATION_SPEED = -0.5;
