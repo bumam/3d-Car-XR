@@ -9,7 +9,7 @@ export const CustomizationProvider: FC<PropsWithChildren<CustomizationContextPro
   const [carModel, setCarModel] = useState<IModelParams>(CAR_MODEL_PARAMS[0]);
   const [accessory, setAccessory] = useState(0);
   const [carColor, setCarColor] = useState<IColorParams>(COLORS_PARAMS[0]);
-  const [carTexture, setCarTexture] = useState(TEXTURE_PARAMS[1]);
+  const [carTexture, setCarTexture] = useState(TEXTURE_PARAMS[0]);
 
   const defaultProps = useMemo(
     () => ({
