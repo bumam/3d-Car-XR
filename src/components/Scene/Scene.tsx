@@ -3,7 +3,7 @@ import { Html, Loader, MeshReflectorMaterial, PresentationControls, Stage } from
 import { useCustomization } from '../../contexts';
 
 import React, { Suspense } from 'react';
-import { McLaren, Porsche } from '../../components';
+import { Ferrari2, McLaren, Porsche } from '../../components';
 import { CarModelNamesEnum } from '../../const';
 import { Ferrari } from '../Cars/Ferrari';
 
@@ -34,6 +34,7 @@ const Scene = () => {
             {carModel.model === CarModelNamesEnum.McLaren && <McLaren />}
             {carModel.model === CarModelNamesEnum.PORSCHE && <Porsche />}
             {carModel.model === CarModelNamesEnum.Ferrari && <Ferrari />}
+            {carModel.model === CarModelNamesEnum.Ferrari2 && <Ferrari2 />}
           </Stage>
         </Suspense>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>

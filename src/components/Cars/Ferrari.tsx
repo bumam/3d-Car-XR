@@ -76,6 +76,15 @@ type GLTFResult = GLTF & {
   };
 };
 
+const def: any = {
+  uAlpha: 0.5,
+  uMultiplier: 42,
+  uColorA: new THREE.Color(0x000000),
+  uColorB: new THREE.Color(0x000000),
+  uTime: 0,
+};
+
+
 export function Ferrari(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('./models/Ferrari/car_for_games_unity.gltf') as GLTFResult;
   const { carColor, carTexture, isWheelsRotation } = useCustomization();
@@ -102,7 +111,7 @@ export function Ferrari(props: JSX.IntrinsicElements['group']) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} rotation={[0, 3.1, 0]}>
       <mesh geometry={nodes.Object_26.geometry} material={materials.MainAlbedo} />
       <group ref={wheelRef1} position={[-0.62, 0.32, -1.25]}>
         <mesh geometry={nodes.Object_29.geometry} material={materials.MainAlbedo} />
@@ -171,4 +180,4 @@ export function Ferrari(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('.models/Ferrari/car_for_games_unity.gltf');
+useGLTF.preload('./models/Ferrari/car_for_games_unity.gltf');

@@ -5,6 +5,12 @@ export enum ColorNamesEnum {
   BLUE = 'blue',
   YELLOW = 'yellow',
   BLACK = 'black',
+  LIGHT_GREEN = 'light-green',
+  PINK = 'pink',
+  PEACH = 'peach',
+  MINT = 'mint',
+  PURPLE = 'purple',
+  GRAY = 'gray',
 }
 
 export enum TextureNamesEnum {
@@ -17,6 +23,7 @@ export enum CarModelNamesEnum {
   PORSCHE = 'porsche',
   McLaren = 'McLaren',
   Ferrari = 'Ferrari',
+  Ferrari2 = 'Ferrar2',
 }
 
 export const TEXTURE_PARAMS: ITextureParams[] = [
@@ -55,6 +62,30 @@ export const COLORS_PARAMS: IColorParams[] = [
     color: '#222222',
     colorName: ColorNamesEnum.BLACK,
   },
+  {
+    color: '#f845c3',
+    colorName: ColorNamesEnum.PINK,
+  },
+  {
+    color: '#a6ea20',
+    colorName: ColorNamesEnum.LIGHT_GREEN,
+  },
+  {
+    color: '#2de7b6',
+    colorName: ColorNamesEnum.MINT,
+  },
+  {
+    color: '#e5a259',
+    colorName: ColorNamesEnum.PEACH,
+  },
+  {
+    color: '#662cce',
+    colorName: ColorNamesEnum.PURPLE,
+  },
+  {
+    color: '#9d9b9d',
+    colorName: ColorNamesEnum.GRAY,
+  },
 ];
 export const CAR_MODEL_PARAMS: IModelParams[] = [
   {
@@ -68,6 +99,10 @@ export const CAR_MODEL_PARAMS: IModelParams[] = [
   {
     name: 'Ferrari',
     model: CarModelNamesEnum.Ferrari,
+  },
+  {
+    name: 'Ferrari2',
+    model: CarModelNamesEnum.Ferrari2,
   },
 ];
 

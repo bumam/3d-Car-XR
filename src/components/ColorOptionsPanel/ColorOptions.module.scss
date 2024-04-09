@@ -1,4 +1,8 @@
 .ColorOptionsPanel {
+  &__option {
+    max-width: 50px;
+  }
+
   &__item {
     transition: 0.4s opacity;
     display: flex;
@@ -16,7 +20,6 @@
     height: 32px;
     border-radius: 100%;
     border: solid 3px #999999;
-
   }
 
   &__activeBorder {

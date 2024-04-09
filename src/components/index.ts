@@ -7,3 +7,5 @@ export * from './TextureOptionsPanel/TextureOptionsPanel';
 export * from './WheelsOptionsPanel/WheelsOptionsPanel';
 export * from './Cars/Porsche';
 export * from './Cars/McLaren';
+export * from './Cars/Ferrari';
+export * from './Cars/Ferrari2';
