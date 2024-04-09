@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.1.11 public/models/ferrari_f50_dark_matte.gltf -t
 */
 
 import * as THREE from 'three';
-import React, {useRef} from 'react';
+import React from 'react';
 import {useGLTF} from '@react-three/drei';
 import {GLTF} from 'three-stdlib';
 import {useCustomization} from '../../contexts';
@@ -138,35 +138,20 @@ export function Ferrari2(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('./models/ferrari_f50_dark_matte.gltf') as GLTFResult;
 
   const { carColor, carTexture, isWheelsRotation } = useCustomization();
-  const wheelRef1 = useRef<any>(null);
-  const wheelRef2 = useRef<any>(null);
-  const wheelRef3 = useRef<any>(null);
-  const wheelRef4 = useRef<any>(null);
-
-  // useFrame(() => {
-  //   if (isWheelsRotation) {
-  //     if (wheelRef1) {
-  //       wheelRef1.current.rotation.x += WHEELS_ROTATION_SPEED;
-  //     }
-  //     if (wheelRef2) {
-  //       wheelRef2.current.rotation.x += WHEELS_ROTATION_SPEED;
-  //     }
-  //     if (wheelRef3) {
-  //       wheelRef3.current.rotation.x += WHEELS_ROTATION_SPEED;
-  //     }
-  //     if (wheelRef4) {
-  //       wheelRef4.current.rotation.x += WHEELS_ROTATION_SPEED;
-  //     }
-  //   }
-  // });
 
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={3.05}>
-        {/*<mesh geometry={nodes.Object_2.geometry} material={materials.material} />*/}
+      <group rotation={[-Math.PI / 2, 0, 0]}>
+        <mesh geometry={nodes.Object_2.geometry} material={materials.material} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.FERRARI_F50} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.Ferrari_F50_1995_by_Alex_Ka} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.material_3} />
+        <mesh geometry={nodes.Object_4.geometry}>
+          <meshStandardMaterial
+            color={carColor.color}
+            roughness={carTexture.roughness}
+            metalness={carTexture.metalness}
+          />
+        </mesh>
+        {/*<mesh geometry={nodes.Object_5.geometry} material={materials.material_3} />*/}
         <mesh geometry={nodes.Object_6.geometry} material={materials.blackaluminium} />
         <mesh geometry={nodes.Object_7.geometry} material={materials.blackchrome} />
         <mesh geometry={nodes.Object_8.geometry} material={materials.blackmatte} />
@@ -186,7 +171,7 @@ export function Ferrari2(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.Object_22.geometry} material={materials.exhaust_chrome} />
         <mesh geometry={nodes.Object_23.geometry} material={materials.exhaust_hole} />
         <mesh geometry={nodes.Object_24.geometry} material={materials.ferrari_support_logo} />
-        <mesh geometry={nodes.Object_25.geometry} material={materials.floor} />
+        {/*<mesh geometry={nodes.Object_25.geometry} material={materials.floor} />*/}
         <mesh geometry={nodes.Object_26.geometry} material={materials.gril_front} />
         <mesh geometry={nodes.Object_27.geometry} material={materials.grill_front_side} />
         <mesh geometry={nodes.Object_28.geometry} material={materials.grill_rear} />
